@@ -9,4 +9,5 @@ func dec: void swapcol(char[][COL],int ROW);
 func call:swapcol(words,ROW);
 
 func def: void swapcol(char words[][COL],int ROW)
+
 ------------------------
