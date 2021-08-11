@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------
-*	fill_string.cpp	-	fill a string with letters only
-*	g++ -std=c++0x
-Mon Oct  9 20:43:43 PDT 2017
+*	Accepts a command line arg and sifts the input for alpha character 
+*	It then places chars in a matrix and outputs them column major 
+*	wise for encryption purposes
 -----------------------------------------------------------------*/
 #include <cstdio>
 #include <cctype>
