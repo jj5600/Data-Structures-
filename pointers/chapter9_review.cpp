@@ -7,6 +7,7 @@
 //*intptr derferences the ptr and presents the value
 using namespace std;
 void changeval(int *, int*);
+int *getrandomNum(int num);
 int main() 
 {	int a=8;
 	int * intptr=nullptr;
@@ -102,6 +103,50 @@ int main()
 	delete [] arrayptr;
 	delete arrayptr;
 	cout<<arrayptr;
+//------
+//dynamic memory allocation is focused around the idea that
+//variables can be created or destroyed while the program is running
+// interivew question. what is memory leak and how to avoid?
+//memory leak is when memory availablility is reduced because the user did not free memroy 
+// this can be resolved by using the key word
+//DMA is only possible with the use of pointers
+// say you want to define an array during run time
+// define the size during runtime and the computer will allocate memory in bytes for that space
+int *intptr1=nullptr;// always initialize pointers to nullptr;
+intptr1= new int;
+cout<<intptr1<<endl;
+*intptr1=25;
+
+cout<<intptr1<<endl;
+cout<<*intptr1<<endl;
+
+delete intptr1;
+int * bruhptr=nullptr;
+bruhptr= new int[5];
+for(int i=0; i<5; i++)
+{
+
+	bruhptr[i]=i;
+
+}
+for(int i=0; i<5; i++)
+{
+	cout<<bruhptr[i]<<endl;
+
+}
+delete [] bruhptr;
+bruhptr=nullptr;
+int *bruhbruh=nullptr;
+bruhbruh=getrandomNum(5);
+for(int i=0; i<5; i++)
+{
+	cout<<bruhbruh[i]<<"..";
+
+}
+delete bruhbruh;
+bruhbruh=nullptr;
+return 0;
+//dynamically allocated memory is stored on the heap
 
 
 } 
@@ -114,4 +159,20 @@ void changeval(int *a, int *b)
 	*a=*b;
 	*b=temp;
 
+}
+nt * getrandomNum(int num)
+{
+
+	int * arr =nullptr;
+	if(num<=0)
+	{
+		return nullptr;
+	}
+	arr= new int[num];
+	for(int i=0; i<num; i++)
+	{
+		arr[i]=i;
+
+	}
+	return arr;
 }
